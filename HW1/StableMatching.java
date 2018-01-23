@@ -1,11 +1,16 @@
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.List;
+import java.util.ArrayList;
 
 class StableMatching {
 
-    public static void main(String[] args) {
+    private List<Person> men;
+
+    private List<Person> women;
+
+    private List<Boolean> result;
+
+    StableMatching() {
 
         Person m1 = new Person("Bob", Gender.MALE);
         Person m2 = new Person("John", Gender.MALE);
@@ -23,25 +28,45 @@ class StableMatching {
         w2.setPreference(Arrays.asList(m2, m1, m3));
         w3.setPreference(Arrays.asList(m3, m2, m1));
         
-        List<Person> men = Arrays.asList(m1,m2,m3);
-        List<Person> women = Arrays.asList(w1,w2,w3);
+        this.men = Arrays.asList(m1,m2,m3);
+        this.women = Arrays.asList(w1,w2,w3);        
 
         System.out.println("Before: " + men);
         System.out.println("Before: " + women);
+    }
 
-        System.out.println("Before for men loop: ");
-            
-        while ( ! (men.get( 0 ).getIsMatched()) && ! ( men.get( 1 ).getIsMatched()) && ! (men.get( 2 ).getIsMatched()) ) {
-        
+    public boolean haveAllMenBeenMatched() {
+
+        this.result = new ArrayList<Boolean>();
+
+        for (Person m : this.men) {
+            this.result.add(m.getIsMatched());
+        }
+
+         return !this.result.contains(false);   
+    }
+
+    public List<Person> getMen() {
+
+         return this.men;   
+    }
+
+    public List<Person> getWomen() {
+
+        return this.women;   
+   }
+   
+    public void match (List<Person> man, List<Person> women) {
+
         for ( Person m : men ) {
-            
+        
             System.out.println( "Man " + m );                         
             System.out.println("Before for women loop");
                
-                for ( Person w : women ) {
+            for ( Person w : women ) {
                                       
-                    if ( !w.getIsMatched() && !m.getIsMatched() ) {
-
+                if ( !w.getIsMatched() && !m.getIsMatched() ) {
+    
                         System.out.println( "In Women not matched: " + w.getName() );
                         m.setIsMatched(true);
                         m.setSpouse( w );
@@ -49,9 +74,9 @@ class StableMatching {
                         w.setSpouse( m );
                         System.out.println(  m );
                         System.out.println(  w );
-                    }
-
-                    else if ( w.getIsMatched() &&  ( w.getPreference().indexOf( m ) < w.getPreference().indexOf( w.getSpouse() ) ) )   {
+                }
+    
+                else if ( w.getIsMatched() &&  ( w.getPreference().indexOf( m ) < w.getPreference().indexOf( w.getSpouse() ) ) )   {
                         System.out.println( "In Women is matched: " + w.getName() + " Index of Current Man: " + w.getPreference().indexOf( m ) + " Index of Current Spouse: " + w.getPreference().indexOf( w.getSpouse()));
                         m.setIsMatched(true);
                         m.setSpouse( w );
@@ -61,19 +86,15 @@ class StableMatching {
                         w.getSpouse().setSpouse( null );
                         System.out.println(  m );
                         System.out.println(  w );
-
-                    }
-
-                    else  {
+    
+                }
+    
+                else  {
                         System.out.println("In Else");
                         System.out.println(  m );
                         System.out.println(  w );                        
-                    }                   
-                }           
-            }
+                }                   
+            }         
         }
-            
-        System.out.println("After: " + men);
-        System.out.println("After: " + women);
     }
 }
