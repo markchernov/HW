@@ -10,29 +10,11 @@ class StableMatching {
 
     private List<Boolean> result;
 
-    StableMatching() {
+    public StableMatching(List<Person> men, List<Person> women) {
 
-        Person m1 = new Person("Bob", Gender.MALE);
-        Person m2 = new Person("John", Gender.MALE);
-        Person m3 = new Person("Pete", Gender.MALE);
-       
-        Person w1 = new Person("Kate", Gender.FEMALE);
-        Person w2 = new Person("Lucy", Gender.FEMALE);
-        Person w3 = new Person("Mia", Gender.FEMALE);
-
-        m1.setPreference(Arrays.asList(w1, w2, w3));
-        m2.setPreference(Arrays.asList(w2, w1, w3));
-        m3.setPreference(Arrays.asList(w3, w2, w1));
-
-        w1.setPreference(Arrays.asList(m1, m2, m3));
-        w2.setPreference(Arrays.asList(m2, m1, m3));
-        w3.setPreference(Arrays.asList(m3, m2, m1));
+        this.men = men;
+        this.women = women;
         
-        this.men = Arrays.asList(m1,m2,m3);
-        this.women = Arrays.asList(w1,w2,w3);        
-
-        System.out.println("Before: " + men);
-        System.out.println("Before: " + women);
     }
 
     public boolean haveAllMenBeenMatched() {
@@ -46,12 +28,12 @@ class StableMatching {
          return !this.result.contains(false);   
     }
 
-    public List<Person> getMen() {
+    public List<Person> getAllMen() {
 
          return this.men;   
     }
 
-    public List<Person> getWomen() {
+    public List<Person> getAllWomen() {
 
         return this.women;   
    }
@@ -90,7 +72,7 @@ class StableMatching {
                 }
     
                 else  {
-                        System.out.println("In Else");
+                        System.out.println("In Else. Not a match");
                         System.out.println(  m );
                         System.out.println(  w );                        
                 }                   

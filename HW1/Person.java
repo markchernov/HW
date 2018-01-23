@@ -13,7 +13,6 @@ public class Person {
 
     private List<Person> preference = null;
 
-
     public Person(String name, Gender gender) {
         this.name = name;
         this.gender = gender;
@@ -77,14 +76,9 @@ public class Person {
 
     }
 
-
      @Override
      public String toString() {
          return this.getGender() + " " + this.getName() + " " + " IsMatched: " + this.getIsMatched() + " Spouse: " + (this.getIsMatched() ? this.getSpouse().getName() : "None" );        
     };
-
-
-
-
 }
 
