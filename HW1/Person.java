@@ -1,5 +1,7 @@
+package hw1;
 import java.util.List;
 import java.util.Objects;
+import hw1.Gender;
 
 public class Person {
 

@@ -1,6 +1,9 @@
+package hw1;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
+import hw1.Person;
 
 class StableMatching {
 

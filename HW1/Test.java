@@ -1,5 +1,10 @@
+package hw1;
+
 import java.util.List;
 import java.util.Arrays;
+import hw1.Person;
+import hw1.Gender;
+import hw1.StableMatching;
 
 public class Test {
 
