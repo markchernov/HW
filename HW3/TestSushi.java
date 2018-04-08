@@ -1,13 +1,13 @@
 //  cd HW
 //  javac C:\Users\Acer\Desktop\GWU_CS\CS_6212\HW\HW3\*.java
-//  java -cp . hw3.Test
+//  java -cp . hw3.TestSushi
 package hw3;
 import hw3.SushiPicker;
 import java.util.*;
 import java.text.DecimalFormat;
 
 
-public class Test { 
+public class TestSushi { 
 
     public static void main(String[] args){
         SushiPicker sushiPicker = new SushiPicker();
