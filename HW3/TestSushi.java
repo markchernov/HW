@@ -12,7 +12,9 @@ public class TestSushi {
 
     public static void main(String[] args){
         SushiPicker sushiPicker = new SushiPicker();
+
         List<Double> dishes = new ArrayList<Double>();
+
         for(int i = 0; i < 20; i++) {
            double price =  Math.random() * 101;
            DecimalFormat twoDForm = new DecimalFormat("#.##");           

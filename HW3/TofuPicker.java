@@ -1,7 +1,7 @@
 package HW3;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class TofuPicker {
 
@@ -13,6 +13,7 @@ public class TofuPicker {
     int capacity;
   
     List<Integer> picks = new ArrayList<Integer>();
+
 
     public void select(int dishValue) {
         System.out.println("dishValue: " + dishValue);

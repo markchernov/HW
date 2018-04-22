@@ -3,6 +3,7 @@
 //  java -cp . hw2.Test
 package HW2;
 import HW2.TwoStacks;
+
 public class Test {
 
     public static void main(String[] args) {
@@ -25,9 +26,9 @@ public class Test {
             ts.push2(i);
         }
 
-        // at this point array shoul look like this [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        // at this point array should look like this [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-        // push1 15 forcig the resize
+        // push1 15 forcing the resize
         for(int i = 1; i <= 10; i++) {
             ts.push1(i);
         }

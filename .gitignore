@@ -1,4 +1,7 @@
 .vscode
 *.class
+<<<<<<< HEAD
 .project
 .classpath
+=======
+>>>>>>> refs/remotes/origin/master

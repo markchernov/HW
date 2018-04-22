@@ -1,6 +1,6 @@
 package HW2;
-
 import java.util.Arrays;
+
 
 //  each stack size limit is 10
 public class TwoStacks {

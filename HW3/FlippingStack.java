@@ -1,5 +1,7 @@
 package HW3;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FlippingStack {
 
@@ -23,6 +25,7 @@ public class FlippingStack {
     private List<Integer> flip(List <Integer> stack) {
 
         List <Integer> invertedList = new ArrayList<Integer>();
+
         for (int i = stack.size() - 1; i >= 0; i--) {
             invertedList.add(stack.get(i));
         }
